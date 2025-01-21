@@ -12,6 +12,10 @@ class UserDTO(marshInstance.Schema):
         required=True,
         error_messages={"required": "The 'name' field is required."}
     )
+    last_name = marshInstance.Str(
+        required=True,
+        error_messages={"required": "The 'last_name' field is required."}
+    )
     email = marshInstance.Email(
         required=True,
         error_messages={"required": "The 'email' field is required."}
@@ -32,7 +36,8 @@ class UserDTO(marshInstance.Schema):
     
     
 class UpdateUserDto(marshInstance.Schema):
-    name = marshInstance.Str(validate=validate.Length(min=1))  
+    name = marshInstance.Str(validate=validate.Length(min=1))
+    last_name = marshInstance.Str(validate=validate.Length(min=1))  
     email = marshInstance.Email()  
     password = marshInstance.Str(validate=validate.Length(min=6)) 
     

@@ -6,7 +6,6 @@ load_dotenv()
 
 class Config:
     MONGO_URI = os.getenv('MONGO_URI') 
-    
     @classmethod
     def validate_enviroment_variables(clase):
         required_variables = ['MONGO_URI']

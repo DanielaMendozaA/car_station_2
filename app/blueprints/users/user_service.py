@@ -25,7 +25,8 @@ class UserService:
         result  = self.collection.insert_one(user)
         return UserModel.from_dict({
                  "_id": result.inserted_id,
-                "name": user["name"], 
+                "name": user["name"],
+                "last_name": user["last_name"], 
                 "email": user["email"], 
                 "password": user["password"]
             })
